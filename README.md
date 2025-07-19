@@ -32,7 +32,6 @@
 ### 2. 克隆代码
 ```bash
 git clone https://github.com/WWKJ-FX/WFG100-Patch.git
-cd WFG100-patches
 ```
 
 ### 3. 获取并切换到对应固件源码  
@@ -45,7 +44,7 @@ git checkout Copter-4.6.0
 
 ### 4-A. 应用 **ArduPilot Copter** 补丁
 ```bash
-git apply ../WFG100-patches/WFG100_APM_Copter-4.5x-4.6.x.patch
+git apply ../WFG100-Patch/WFG100_APM_Copter-4.5x-4.6.x.patch
 ./waf configure --board=WFG100
 ./waf copter -j$(nproc)         # 生成 build/WFG100/bin/arducopter.apj
 ```
@@ -55,7 +54,7 @@ git apply ../WFG100-patches/WFG100_APM_Copter-4.5x-4.6.x.patch
 git clone https://github.com/betaflight/betaflight.git
 cd betaflight
 git checkout BF-4.6.0
-git apply ../WFG100-patches/WFG100_BF-4.5.X-4.6.X.patch
+git apply ../WFG100-Patch/WFG100_BF-4.5.X-4.6.X.patch
 make WFG100 -j$(nproc)          # 生成 obj/WFG100/WFG100.hex
 ```
 
