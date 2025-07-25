@@ -813,7 +813,7 @@ index 0000000000..c3699733ef
 +PE13 SPI4_MISO SPI4
 +PE14 SPI4_MOSI SPI4
 +
-+# add ICM42605 on SPI4 as a backup 
++# add ICM42605 on SPI4 as a backup
 +PC13 IMU3_CS CS
 +
 +# two I2C bus
