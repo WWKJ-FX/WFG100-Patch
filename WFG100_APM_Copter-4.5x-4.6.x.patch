@@ -959,12 +959,12 @@ index 0000000000..c3699733ef
 +# SPI3 external connections
 +SPIDEV pixartflow   SPI3 DEVID1  EXT_CS1  MODE3   2*MHZ  2*MHZ
 +
-+# no built-in compass, but probe the i2c bus for all possible
-+# external compass types
++# compass
 +define ALLOW_ARM_NO_COMPASS
++define HAL_COMPASS_DISABLE_IST8310_INTERNAL_PROBE
 +define HAL_PROBE_EXTERNAL_I2C_COMPASSES
-+define HAL_I2C_INTERNAL_MASK 0
-+define HAL_COMPASS_AUTO_ROT_DEFAULT 2
++define IST8310 I2C:ALL_EXTERNAL:0x0E true  ROTATION_NONE
++define IST8310 I2C:ALL_INTERNAL:0x0E false ROTATION_ROLL_180
 +
 +# two IMUs
 +# WFG100A,      ICM42605, ICM42688P,icm20602
