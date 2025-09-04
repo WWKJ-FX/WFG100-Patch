@@ -806,10 +806,10 @@ index 0000000000..451778b711
 +PC13 IMU3_CS CS
 diff --git a/libraries/AP_HAL_ChibiOS/hwdef/WFG100/hwdef.dat b/libraries/AP_HAL_ChibiOS/hwdef/WFG100/hwdef.dat
 new file mode 100644
-index 0000000000..2cfc32baf4
+index 0000000000..1988294748
 --- /dev/null
 +++ b/libraries/AP_HAL_ChibiOS/hwdef/WFG100/hwdef.dat
-@@ -0,0 +1,233 @@
+@@ -0,0 +1,236 @@
 +# hw definition file for processing by chibios_pins.py
 +# for 物唯科技 WFG100
 +
@@ -1018,15 +1018,16 @@ index 0000000000..2cfc32baf4
 +define ALLOW_ARM_NO_COMPASS
 +define HAL_COMPASS_DISABLE_IST8310_INTERNAL_PROBE
 +define HAL_PROBE_EXTERNAL_I2C_COMPASSES
++COMPASS IST8310 I2C:ALL_INTERNAL:0x0E false ROTATION_NONE
 +COMPASS IST8310 I2C:ALL_EXTERNAL:0x0E true  ROTATION_NONE
-+COMPASS IST8310 I2C:ALL_INTERNAL:0x0E false ROTATION_ROLL_180
++
 +
 +# two IMUs
 +# WFG100A,      ICM42605, ICM42688P,icm20602
 +
 +#IMU1 ICM20602 ICM42605 ICM42688P 三选一
 +#IMU2 ICM42688P
-+IMU Invensense SPI:icm20602 ROTATION_ROLL_180
++
 +IMU Invensensev3 SPI:icm42605 ROTATION_YAW_270
 +IMU Invensensev3 SPI:icm42688 ROTATION_YAW_270
 +
@@ -1043,3 +1044,12 @@ index 0000000000..2cfc32baf4
 +define OSD_ENABLED 1
 +define HAL_OSD_TYPE_DEFAULT 1
 +ROMFS_WILDCARD libraries/AP_OSD/fonts/font*.bin
++
++
+diff --git a/modules/littlefs b/modules/littlefs
+new file mode 160000
+index 0000000000..34be692aaf
+--- /dev/null
++++ b/modules/littlefs
+@@ -0,0 +1 @@
++Subproject commit 34be692aafaaf4319a18e415b08aa4332697408b
