@@ -1,9 +1,9 @@
 diff --git a/src/config/configs/WFG100/config.h b/src/config/configs/WFG100/config.h
 new file mode 100644
-index 0000000..1888eac
+index 000000000..cb3bbd0eb
 --- /dev/null
 +++ b/src/config/configs/WFG100/config.h
-@@ -0,0 +1,168 @@
+@@ -0,0 +1,177 @@
 +/*
 + * This file is part of Betaflight.
 + *
@@ -47,6 +47,11 @@ index 0000000..1888eac
 +#define USE_BARO_DPS310
 +#define USE_MAX7456
 +#define USE_SDCARD
++
++#ifndef USE_MAG
++#define USE_MAG
++#define USE_MAG_IST8310
++#endif
 +
 +#define BEEPER_PIN           PA15
 +#define MOTOR1_PIN           PB0
@@ -146,7 +151,11 @@ index 0000000..1888eac
 +#define TIMUP8_DMA_OPT      0
 +
 +#define BARO_I2C_INSTANCE I2CDEV_2
-+#define MAG_I2C_INSTANCE I2CDEV_1
++#define MAG_I2C_INSTANCE  I2CDEV_2
++#define MAG_I2C_ADDRESS   14
++#define MAG_ALIGN         CW0_DEG
++#define MAG_ALIGN_YAW     0
++
 +
 +#define DEFAULT_RX_FEATURE FEATURE_RX_SERIAL
 +#define SERIALRX_UART SERIAL_PORT_USART6
